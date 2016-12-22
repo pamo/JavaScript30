@@ -3,10 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Key Detection</title>
-  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
-</head>
-<body>
-<script>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js">
 </script>
+</head>
+
+<body>
+  <script type="text/javascript">
+const sequence = [];
+const secretCode = 'password';
+window.addEventListener('keyup', (e) => {
+	sequence.push(e.key);
+	sequence.splice(-secretCode.length - 1, sequence.length - secretCode.length);
+	if(sequence.join('').includes(secretCode)) cornify_add();
+});
+	</script>
 </body>
 </html>
