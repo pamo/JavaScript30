@@ -65,8 +65,9 @@
       speed.textContent = data.coords.speed;
       arrow.style.transform = `rotate(${data.coords.heading}deg)`;
     }, (err) => {
-      console.err(err);
-      alert('HEY! YOU GOTTA ALLOW THAT TO HAPPEN!!!');
+      console.error(err);
+      if(err.code === 1) alert('HEY! YOU GOTTA ALLOW THAT TO HAPPEN!!!');
+      if(err.code === 2) alert('Maybe you should get online');
     });
 
   </script>
